@@ -7,10 +7,11 @@
     </head>
     <body>
         <header>
+            <img src="./content/images/IMG_01.jpg">
             <%- include('components/header.ejs'); %>
         </header>
         <main>
-            <%- include('content/home.ejs'); %>
+            <%- include('content/' + page + '.ejs'); %>
         </main>
         <footer>
             <%- include('components/footer.ejs'); %>

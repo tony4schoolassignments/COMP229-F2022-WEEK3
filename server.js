@@ -8,6 +8,9 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+// Configuration mudule
+import { Secret } from './config/config.js';
+
 // Import routes
 import indexRouter from "./app/routes/index.route.server.js"
 
@@ -24,7 +27,7 @@ app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, '/client')));
 app.use(express.static(path.join(__dirname, '/public')));
 app.unsubscribe(session({
-    secret: 'MySecret',
+    secret: Secret,
     saveUninitialized: false,
     resave: false
 }));
